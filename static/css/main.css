@@ -1,0 +1,112 @@
+@font-face {
+    font-family: Zpix;
+    src: url(/static/echo.woff2);
+}
+
+* {
+    margin: 0;
+    font-family: Zpix, sans-serif !important;
+}
+
+body {
+    background-image: url("/static/img/bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.top {
+    background-color: #d2b48ccc;
+    height: 50px;
+}
+
+.top .head {
+    float: left;
+    display: inline-block;
+}
+
+.top .head img {
+    height: 64px;
+    border: 3px solid orangered;
+    border-radius: 100%;
+    margin: 5px;
+    background-color: #b8b8b8;
+}
+
+.top .name {
+    margin-left: 5px;
+    font-size: 18px;
+    margin-top: 15px;
+    float: left;
+}
+
+.top .level {
+    float: left;
+    margin-top: 15px;
+    color: #5e2ca9;
+}
+
+.top .right {
+    float: right;
+}
+
+.top .right .coin {
+    float: left;
+    margin-top: 5px;
+    height: 46px;
+}
+
+.top .right .coin_num {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #b20b1f;
+}
+
+
+.main {
+    margin: 60px auto;
+    width: 90%;
+    background-color: #b8b8b891;
+    height: 520px;
+    border-radius: 10px;
+}
+
+.top_nav {
+    float: left;
+}
+
+.top_nav .btn {
+    display: inline-block;
+}
+
+.top_nav .btn img {
+    height: 52px;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .btn {
+    display: inline-block;
+    margin: 0 auto;
+    width: 72px;
+    border-radius: 20px;
+    background-color: #7a7681cc;
+}
+
+.footer .btn:hover {
+    background-color: #b8b8b8;
+}
+
+.footer .btn img {
+    height: 64px;
+}
