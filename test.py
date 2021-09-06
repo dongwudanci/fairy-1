@@ -1,6 +1,4 @@
 from src.MySql import *
-from src.String import md5
+from src.String import md5, token_encode
 
-db = DB()
-res = db.table('user').where(" email = 'i1@drizzle.vip' ").item()
-
+print(token_encode(email='233',password='233'))
