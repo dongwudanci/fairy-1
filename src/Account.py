@@ -1,5 +1,5 @@
-from MySql import *
-from String import md5, token_encode
+from src.MySql import *
+from src.String import md5, token_encode
 
 
 class Account:
@@ -14,4 +14,4 @@ class Account:
         if res is None:
             return False
         else:
-            return token_encode(email=email, password=password)
+            return token_encode(id=res['id'], email=res['email'], password=res['password'])

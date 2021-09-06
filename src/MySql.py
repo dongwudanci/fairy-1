@@ -8,8 +8,8 @@ class DB:
         self.Field: str = '*'
         self.Where: str = '1 = 1'
         self.Order: str = NULL
-        db = connect(host='127.0.0.1', user='drizzle', password='20011205', db='fairy')
-        self.cursor = db.cursor(cursors.DictCursor)
+        self.db = connect(host='127.0.0.1', user='drizzle', password='20011205', db='fairy')
+        self.cursor = self.db.cursor(cursors.DictCursor)
 
     def table(self, table: str):
         self.Table = table
@@ -42,3 +42,17 @@ class DB:
             sql += " ORDER BY %s" % self.Order
         self.cursor.execute(sql)
         return self.cursor.fetchall()
+
+    def insert(self, **field):
+        k, v = '', ''
+        for key, value in field.items():
+            k += key + ", "
+            if isinstance(value, str):
+                v += "'" + value + "', "
+            else:
+                v += value + ", "
+        k = k[:-2]
+        v = v[:-2]
+        sql = "INSERT INTO %s(%s)VALUES (%s)" % (self.Table, k, v)
+        self.cursor.execute(sql)
+        return self.cursor.lastrowid
